@@ -1,0 +1,42 @@
+digraph G {
+  graph [rankdir=BT, nodesep=0.35, ranksep=0.55, dpi=170, splines=true,
+         fontname="DejaVu Sans"];
+  node [shape=plaintext, fontname="DejaVu Sans", fontsize=9];
+  edge [fontname="DejaVu Sans", fontsize=8];
+  Exception [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#EEEEEE"><B>Exception</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  BikeRentalError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>BikeRentalError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  ValidationError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>ValidationError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  EntityNotFoundError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>EntityNotFoundError</B></TD></TR><TR><TD ALIGN="LEFT">+ entity_name: str<BR ALIGN="LEFT"/>+ entity_id: int<BR ALIGN="LEFT"/></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  DuplicateEntityError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>DuplicateEntityError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  DependencyError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>DependencyError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  RentalConflictError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>RentalConflictError</B></TD></TR><TR><TD ALIGN="LEFT">+ bike_model: str<BR ALIGN="LEFT"/>+ conflict_rental_id: int<BR ALIGN="LEFT"/></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  AgeRestrictionError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>AgeRestrictionError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  InvalidStatusError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>InvalidStatusError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  StorageError [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#FBE3E3"><B>StorageError</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  Bike [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>Bike</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  Rental [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>Rental</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  Repository [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>Repository</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  RentalService [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>RentalService</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  Storage [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>Storage</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  Customer [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>Customer</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  TimeSlot [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3"><TR><TD BGCOLOR="#E8EEF7"><B>TimeSlot</B></TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR><TR><TD ALIGN="LEFT" HEIGHT="6"> </TD></TR></TABLE>>];
+  BikeRentalError -> Exception [arrowhead=empty];
+  ValidationError -> BikeRentalError [arrowhead=empty];
+  EntityNotFoundError -> BikeRentalError [arrowhead=empty];
+  DuplicateEntityError -> BikeRentalError [arrowhead=empty];
+  DependencyError -> BikeRentalError [arrowhead=empty];
+  RentalConflictError -> BikeRentalError [arrowhead=empty];
+  AgeRestrictionError -> BikeRentalError [arrowhead=empty];
+  InvalidStatusError -> BikeRentalError [arrowhead=empty];
+  StorageError -> BikeRentalError [arrowhead=empty];
+  Bike -> AgeRestrictionError [style=dashed, arrowhead=vee, label="«raises»"];
+  Bike -> ValidationError [style=dashed, arrowhead=vee, label="«raises»"];
+  Customer -> ValidationError [style=dashed, arrowhead=vee, label="«raises»"];
+  TimeSlot -> ValidationError [style=dashed, arrowhead=vee, label="«raises»"];
+  Rental -> InvalidStatusError [style=dashed, arrowhead=vee, label="«raises»"];
+  Repository -> EntityNotFoundError [style=dashed, arrowhead=vee, label="«raises»"];
+  Repository -> DuplicateEntityError [style=dashed, arrowhead=vee, label="«raises»"];
+  RentalService -> RentalConflictError [style=dashed, arrowhead=vee, label="«raises»"];
+  RentalService -> DependencyError [style=dashed, arrowhead=vee, label="«raises»"];
+  Storage -> StorageError [style=dashed, arrowhead=vee, label="«raises»"];
+}
