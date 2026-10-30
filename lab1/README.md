@@ -15,4 +15,4 @@
 - `bike_rental/storage.py` - JsonStorage и XmlStorage
 - `bike_rental/app.py` - консольный интерфейс
 - `data/` - примеры файлов data.json и data.xml
-- `docs/` - диаграммы классов (Graphviz + PNG)
+- `docs/` - диаграммы классов (draw.io + PNG)
