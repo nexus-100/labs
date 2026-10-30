@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bike_rental>
+  <stations>
+    <station>
+      <id>1</id>
+      <name>Парк Горького</name>
+      <address>Крымский Вал, 9</address>
+    </station>
+    <station>
+      <id>2</id>
+      <name>Набережная</name>
+      <address>Пресненская наб., 12</address>
+    </station>
+  </stations>
+  <accessories>
+    <accessory>
+      <id>1</id>
+      <name>Шлем</name>
+    </accessory>
+    <accessory>
+      <id>2</id>
+      <name>Замок</name>
+    </accessory>
+    <accessory>
+      <id>3</id>
+      <name>Детское кресло</name>
+    </accessory>
+  </accessories>
+  <bikes>
+    <bike>
+      <id>1</id>
+      <kind>city</kind>
+      <model>Stels Navigator</model>
+      <station_id>1</station_id>
+      <price_per_hour>150.0</price_per_hour>
+      <accessory_ids list="true">
+        <item>1</item>
+        <item>2</item>
+      </accessory_ids>
+    </bike>
+    <bike>
+      <id>2</id>
+      <kind>city</kind>
+      <model>Forward Racer</model>
+      <station_id>1</station_id>
+      <price_per_hour>120.0</price_per_hour>
+      <accessory_ids list="true">
+        <item>2</item>
+      </accessory_ids>
+    </bike>
+    <bike>
+      <id>3</id>
+      <kind>electric</kind>
+      <model>Xiaomi Mi E-Bike</model>
+      <station_id>1</station_id>
+      <price_per_hour>400.0</price_per_hour>
+      <accessory_ids list="true">
+        <item>1</item>
+        <item>2</item>
+      </accessory_ids>
+      <battery_wh>480</battery_wh>
+    </bike>
+    <bike>
+      <id>4</id>
+      <kind>electric</kind>
+      <model>Kugoo Cargo</model>
+      <station_id>2</station_id>
+      <price_per_hour>450.0</price_per_hour>
+      <accessory_ids list="true">
+        <item>1</item>
+        <item>3</item>
+      </accessory_ids>
+      <battery_wh>600</battery_wh>
+    </bike>
+  </bikes>
+  <customers>
+    <customer>
+      <id>1</id>
+      <full_name>Иванова Мария Петровна</full_name>
+      <email>ivanova@example.com</email>
+      <birth_date>2000-03-14</birth_date>
+    </customer>
+    <customer>
+      <id>2</id>
+      <full_name>Петров Артём Сергеевич</full_name>
+      <email>petrov@example.com</email>
+      <birth_date>2012-08-02</birth_date>
+    </customer>
+    <customer>
+      <id>3</id>
+      <full_name>Сидоров Олег Иванович</full_name>
+      <email>sidorov@example.com</email>
+      <birth_date>1985-11-30</birth_date>
+    </customer>
+  </customers>
+  <rentals>
+    <rental>
+      <id>1</id>
+      <bike_id>1</bike_id>
+      <customer_id>1</customer_id>
+      <start>2026-11-04T10:00</start>
+      <end>2026-11-04T12:00</end>
+      <cost>300.0</cost>
+      <status>confirmed</status>
+    </rental>
+    <rental>
+      <id>2</id>
+      <bike_id>1</bike_id>
+      <customer_id>3</customer_id>
+      <start>2026-11-02T13:00</start>
+      <end>2026-11-02T15:00</end>
+      <cost>300.0</cost>
+      <status>confirmed</status>
+    </rental>
+    <rental>
+      <id>3</id>
+      <bike_id>3</bike_id>
+      <customer_id>3</customer_id>
+      <start>2026-11-03T09:00</start>
+      <end>2026-11-03T12:00</end>
+      <cost>1200.0</cost>
+      <status>confirmed</status>
+    </rental>
+  </rentals>
+</bike_rental>
