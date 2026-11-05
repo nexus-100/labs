@@ -188,7 +188,7 @@ class TestFindCoordinates(unittest.TestCase):
         self.assertEqual(len(found), 2)
 
     def test_multiline(self):
-        text = "первая 10.5, 20.5\\nвторая 30.5, 40.5\\n"
+        text = "первая 10.5, 20.5\nвторая 30.5, 40.5\n"
         self.assertEqual(len(find_coordinates(text)), 2)
 
     def test_out_of_range_skipped(self):
