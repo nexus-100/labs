@@ -97,6 +97,7 @@ class TestIsValidCoordinate(unittest.TestCase):
             "55.7558° E, 37.6176° N",   # перепутаны полушария
             "55.7558° X, 37.6176° E",
             "55.7558° n, 37.6176° e",   # строчные буквы не допускаются
+            "55.7558°N37.6176°E",       # нет разделителя между координатами
         ]
         for text in cases:
             with self.subTest(text=text):
@@ -187,7 +188,7 @@ class TestFindCoordinates(unittest.TestCase):
         self.assertEqual(len(found), 2)
 
     def test_multiline(self):
-        text = "первая 10.5, 20.5\nвторая 30.5, 40.5\n"
+        text = "первая 10.5, 20.5\\nвторая 30.5, 40.5\\n"
         self.assertEqual(len(find_coordinates(text)), 2)
 
     def test_out_of_range_skipped(self):
@@ -208,6 +209,9 @@ class TestFindCoordinates(unittest.TestCase):
     def test_semicolon_separator(self):
         found = find_coordinates("55.7101; 37.5537")
         self.assertEqual(len(found), 1)
+
+    def test_hemisphere_without_separator_is_not_found(self):
+        self.assertEqual(find_coordinates("55.7558°N37.6176°E"), [])
 
 
 if __name__ == "__main__":
