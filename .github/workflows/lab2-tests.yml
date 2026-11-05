@@ -1,0 +1,30 @@
+name: Lab2 tests
+
+on:
+  push:
+    paths:
+      - "lab2/**"
+      - ".github/workflows/lab2-tests.yml"
+  pull_request:
+    paths:
+      - "lab2/**"
+      - ".github/workflows/lab2-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run unit tests
+        run: python -m unittest discover -v
